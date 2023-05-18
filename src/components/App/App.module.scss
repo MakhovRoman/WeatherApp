@@ -1,0 +1,19 @@
+@import '@styles/globales';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 20% auto;
+  height: 100vh;
+
+  &_item {
+    padding: 15px;
+  }
+
+  &_aside {
+    background-color: rgb(24, 53, 80);
+  }
+
+  &_main {
+    background-color: rgb(6, 21, 49);
+  }
+}

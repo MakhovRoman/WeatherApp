@@ -1,0 +1,7 @@
+@import '@styles/constants';
+
+.header {
+  height: 60px;
+  width: 100%;
+  @extend %flex-centr-fullwidth;
+}

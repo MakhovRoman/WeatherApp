@@ -1,0 +1,20 @@
+%flex-centr {
+  display: flex;
+  align-items: center;
+}
+
+%flex-centr-fullwidth {
+  @extend %flex-centr;
+  justify-content: space-between;
+}
+
+%flex-centr-middle {
+  @extend %flex-centr;
+  justify-content: center;
+}
+
+
+%flex-centr-column {
+  @extend %flex-centr-fullwidth;
+  flex-direction: column;
+}
