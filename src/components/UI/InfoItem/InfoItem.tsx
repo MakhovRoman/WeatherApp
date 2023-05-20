@@ -1,14 +1,19 @@
 import React from 'react';
 import styles from './InfoItem.module.scss';
 
-export const InfoItem:React.FC = () => {
+export type TInfoItem = {
+  title: string,
+  value: string | number,
+}
+
+export const InfoItem:React.FC<TInfoItem> = (props) => {
   return (
     <div className={styles.info_item}>
-      <span>
-
-      </span>
-      <span>
-
+      <h4 className={styles.info_item_title}>
+        {props.title}
+      </h4>
+      <span className={styles.info_item_value}>
+        {props.value}
       </span>
     </div>
   )

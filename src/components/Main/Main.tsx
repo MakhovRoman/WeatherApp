@@ -7,25 +7,24 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@src/store/store';
 import { useDispatch } from 'react-redux';
 import { increment } from '@src/store/slices/counterSlice';
+import { useLoadCurrentata } from '@src/services/hooks';
+import { useLoadCurrentForecast } from '@src/services/hooks/useLoadCurrentForecast';
 
 export const Main: React.FC<WrapperContent> = (props) => {
-  const [current, setCurrent] = useState<TCurrent>({});
-  const [imgURL, setImgURL] = useState<string>('');
-
-  const count = useSelector((state: RootState) => state.counter.value);
   const city = useSelector((state: RootState) => state.city.city);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log(city);
+  // useEffect(() => {
+  //   weatherAPI.getWeather(city)
+  //   .then(response => {
+  //     console.log(response)
+  //     setCurrentCity(response.current);
+  //     setImgURL(response.current.condition.icon);
+  //   })
+  // }, [city])
 
-    weatherAPI.getWeather(city)
-    .then(response => {
-      console.log(response)
-      setCurrent(response);
-      setImgURL(response.condition.icon);
-    })
-  }, [city])
+  const [imgURL, currentCity] = useLoadCurrentForecast({
+    city
+  })
 
   return (
     <section className={clsx(props.className)}>
@@ -33,14 +32,14 @@ export const Main: React.FC<WrapperContent> = (props) => {
       Main content
       <div>
         <img src={imgURL} alt="" width={100} height={100}/>
-        {current.temp_c}
+        {currentCity.temp_c}
       </div>
-      <div>
+      {/* <div>
         {count}
         <div>
           <button onClick={() => dispatch(increment())}>Increment</button>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }

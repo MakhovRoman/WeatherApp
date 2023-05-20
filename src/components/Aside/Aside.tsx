@@ -8,11 +8,13 @@ import { Info } from '../UI/Info/Info';
 
 
 export const Aside:React.FC<WrapperContent> = (props) => {
+
+
   return (
-    <section className={clsx(props.className)}>
+    <aside className={clsx(props.className)}>
       <Search />
       <Info />
       <Clock />
-    </section>
+    </aside>
   )
 }

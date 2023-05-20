@@ -3,11 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 export const citySlice = createSlice({
   name: 'city',
   initialState: {
-    city: 'Stavropol',
+    city: sessionStorage.getItem('city') || 'Stavropol',
   },
   reducers: {
     enterCityName: (state, action) => {
-      state.city = action.payload
+      const city = action.payload;
+      state.city = city;
     },
   },
 });

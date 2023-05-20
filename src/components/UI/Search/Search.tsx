@@ -1,9 +1,10 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import styles from './Search.module.scss';
 import { useSelector } from 'react-redux';
 import { RootState } from '@src/store/store';
 import { useDispatch } from 'react-redux';
 import { enterCityName } from '@src/store/slices/citySlice';
+import { setWeatherDataThunk } from '@src/store/thunks/setWeatherDataThunk';
 
 export const Search: React.FC = () => {
   const [search, setSearch] = useState('');
@@ -20,10 +21,18 @@ export const Search: React.FC = () => {
 
   const handlerSubmit = (event: FormEvent) => {
     event.preventDefault();
+    sessionStorage.setItem('city', search);
 
     dispatch(enterCityName(search));
     setSearch('');
   }
+
+  useEffect(() => {
+    console.log('search use effect')
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    dispatch(setWeatherDataThunk(city))
+  }, [city])
 
   return (
     <form
