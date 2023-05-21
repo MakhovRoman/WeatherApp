@@ -31,7 +31,7 @@ export const Search: React.FC = () => {
     console.log('search use effect')
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    dispatch(setWeatherDataThunk(city))
+    dispatch(setWeatherDataThunk(city));
   }, [city])
 
   return (

@@ -7,8 +7,7 @@ export const citySlice = createSlice({
   },
   reducers: {
     enterCityName: (state, action) => {
-      const city = action.payload;
-      state.city = city;
+      state.city = action.payload;
     },
   },
 });
