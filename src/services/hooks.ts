@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { weatherAPI } from "./API/weatherAPI";
-import { TCurrent } from "@typings/app";
-import { useSelector } from "react-redux";
-import { RootState } from "@src/store/store";
 import { setWeatherData } from "@src/store/slices/weatherDataSlice";
+import { RootState } from "@src/store/store";
+import { TCurrent } from "@typings/app";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+
+import { weatherAPI } from "./API/weatherAPI";
 
 export const useFetching = (callback: Promise<Record<string, unknown>>) => {
   const fetching = async () => {

@@ -1,0 +1,3 @@
+@function loaderAnimationDelay ($index) {
+  @return $index * (-0.036s);
+}

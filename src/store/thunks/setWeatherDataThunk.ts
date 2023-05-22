@@ -1,6 +1,7 @@
 import { weatherAPI } from "@src/services/API/weatherAPI"
-import { setWeatherData } from "../slices/weatherDataSlice"
+
 import { setIsLoading } from "../slices/isLoadingSlice"
+import { setWeatherData } from "../slices/weatherDataSlice"
 
 export const setWeatherDataThunk = (city: string) => {
   return (dispatch: any) => {

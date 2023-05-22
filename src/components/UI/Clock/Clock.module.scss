@@ -2,11 +2,15 @@
 
 .clock {
   @extend %flex-centr-fullwidth;
+
   justify-content: center;
+
   width: 85%;
   height: 50px;
   margin: 0 auto;
+
   font-size: 24px;
-  background-color: rgb(16, 29, 56);
+
+  background-color: rgb(16 29 56);
   border-radius: 10px;
 }

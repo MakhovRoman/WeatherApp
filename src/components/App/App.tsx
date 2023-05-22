@@ -1,18 +1,17 @@
-import React, { useEffect } from 'react';
+import 'normalize.css';
+
 import { Aside } from '@components/Aside/Aside';
 import { Main } from '@components/Main/Main';
-
-
-import styles from './App.module.scss'
-import 'normalize.css';
-import { useSelector } from 'react-redux';
 import { RootState } from '@src/store/store';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setWeatherData } from '@src/store/slices/weatherDataSlice';
-import { weatherAPI } from '@src/services/API/weatherAPI';
-import { useLoadCurrentata } from '@src/services/hooks';
+
+import { Loader } from '../UI/Loader/Loader';
+import styles from './App.module.scss'
 
 export const App:React.FC = () => {
+  const isLoading = useSelector((state: RootState) => state.isLoading.isLoading);
   const city = useSelector((state: RootState) => state.city.city)
   const dispatch = useDispatch();
 
@@ -25,6 +24,12 @@ export const App:React.FC = () => {
     <main className={styles.wrapper}>
       <Aside className={[styles.wrapper_aside, styles.wrapper_item]}/>
       <Main className={[styles.wrapper_main, styles.wrapper_item]}/>
+
+      {isLoading &&
+        <div className={styles.wrapper_loader}>
+          <Loader />
+        </div>
+      }
     </main>
   )
 }

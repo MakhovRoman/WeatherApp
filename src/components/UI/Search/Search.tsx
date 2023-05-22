@@ -1,10 +1,11 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import styles from './Search.module.scss';
-import { useSelector } from 'react-redux';
-import { RootState } from '@src/store/store';
-import { useDispatch } from 'react-redux';
 import { enterCityName } from '@src/store/slices/citySlice';
+import { RootState } from '@src/store/store';
 import { setWeatherDataThunk } from '@src/store/thunks/setWeatherDataThunk';
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
+import styles from './Search.module.scss';
 
 export const Search: React.FC = () => {
   const [search, setSearch] = useState('');

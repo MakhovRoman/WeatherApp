@@ -1,5 +1,6 @@
 import { TCurrent } from "@typings/app";
 import { useEffect, useState } from "react";
+
 import { weatherAPI } from "../API/weatherAPI";
 
 export type TCurrentForecastProps = {

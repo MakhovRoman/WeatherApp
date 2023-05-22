@@ -1,4 +1,5 @@
-@import '@styles/globales';
+@import '@styles/globales.scss';
+@import '@styles/constants.scss';
 
 .wrapper {
   display: grid;
@@ -10,10 +11,25 @@
   }
 
   &_aside {
-    background-color: rgb(24, 53, 80);
+    background-color: rgb(24 53 80);
   }
 
   &_main {
-    background-color: rgb(6, 21, 49);
+    background-color: rgb(6 21 49);
+  }
+
+  &_loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.75);
+
+    @extend %flex-centr-middle;
   }
 }

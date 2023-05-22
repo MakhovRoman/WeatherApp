@@ -1,27 +1,15 @@
-import { TCurrent, WrapperContent } from '@typings/app';
-import React, { useEffect, useState } from 'react';
-import { Header } from '../Header/Header';
-import { weatherAPI } from '@src/services/API/weatherAPI';
-import clsx from 'clsx';
-import { useSelector } from 'react-redux';
-import { RootState } from '@src/store/store';
-import { useDispatch } from 'react-redux';
-import { increment } from '@src/store/slices/counterSlice';
-import { useLoadCurrentata } from '@src/services/hooks';
+import { Header } from '@components/Header/Header';
+import { Loader } from '@src/components/UI/Loader/Loader';
 import { useLoadCurrentForecast } from '@src/services/hooks/useLoadCurrentForecast';
+import { RootState } from '@src/store/store';
+import { WrapperContent } from '@typings/app';
+import clsx from 'clsx';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 export const Main: React.FC<WrapperContent> = (props) => {
   const city = useSelector((state: RootState) => state.city.city);
-
-  // useEffect(() => {
-  //   weatherAPI.getWeather(city)
-  //   .then(response => {
-  //     console.log(response)
-  //     setCurrentCity(response.current);
-  //     setImgURL(response.current.condition.icon);
-  //   })
-  // }, [city])
-
+  const isLoading = useSelector((state: RootState) => state.isLoading.isLoading);
   const [imgURL, currentCity] = useLoadCurrentForecast({
     city
   })
@@ -29,17 +17,16 @@ export const Main: React.FC<WrapperContent> = (props) => {
   return (
     <section className={clsx(props.className)}>
       <Header />
-      Main content
-      <div>
-        <img src={imgURL} alt="" width={100} height={100}/>
-        {currentCity.temp_c}
-      </div>
-      {/* <div>
-        {count}
+      {
+        isLoading
+        ?
+        <Loader />
+        :
         <div>
-          <button onClick={() => dispatch(increment())}>Increment</button>
+          <img src={imgURL} alt="" width={100} height={100}/>
+          {currentCity.temp_c}
         </div>
-      </div> */}
+      }
     </section>
   )
 }

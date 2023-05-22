@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import styles from './Clock.module.scss'
 import { transformDate } from "@utils/transformDate";
+import React, { useState } from "react";
+
+import styles from './Clock.module.scss'
 
 export const Clock: React.FC = () => {
   const [date, setDate] = useState<Date>(new Date());
