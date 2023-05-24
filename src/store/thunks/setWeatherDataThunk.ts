@@ -7,7 +7,11 @@ export const setWeatherDataThunk = (city: string) => {
   return (dispatch: any) => {
     dispatch(setIsLoading(true));
     weatherAPI.getWeather(city)
-      .then((response) => dispatch(setWeatherData(response.current)))
-      .then((response) => dispatch(setIsLoading(false)))
+      .then((response) => {
+        console.log(response);
+
+        dispatch(setWeatherData(response))
+      })
+      .then(() => dispatch(setIsLoading(false)))
   }
 }

@@ -1,13 +1,13 @@
-import { Loader } from '@components/UI/Loader/Loader';
 import { RootState } from '@src/store/store';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { LoaderInfoData } from '../LoaderInfoData/LoaderInfoData';
 import styles from './InfoItem.module.scss';
 
 export type TInfoItem = {
   title: string,
-  value: string | number,
+  value: string | number ,
 }
 
 export const InfoItem:React.FC<TInfoItem> = (props) => {
@@ -22,7 +22,7 @@ export const InfoItem:React.FC<TInfoItem> = (props) => {
         {
           isLoading
           ?
-          <Loader />
+          <LoaderInfoData />
           :
           props.value
         }

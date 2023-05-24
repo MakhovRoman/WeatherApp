@@ -1,0 +1,24 @@
+@import '@styles/constants';
+
+.mainWeatherData {
+  @extend %flex-centr-column;
+
+  &_Picture {
+    & img {
+      width: 200px;
+      height: 200px;
+      margin-top: 100px;
+    }
+  }
+
+  &_Temp {
+    font-size: 32px;
+    font-weight: 500;
+
+    @extend %flex-centr-column;
+
+    & span {
+      margin-top: 10px;
+    }
+  }
+}

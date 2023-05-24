@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const CurrentDate = () => {
+export const CurrentDate: React.FC = () => {
   const date = new Date();
   return (
     <div>

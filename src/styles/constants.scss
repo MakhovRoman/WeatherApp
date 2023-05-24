@@ -1,8 +1,15 @@
-@import "@styles/functions.scss";
+@use "sass:map";
+
+@import "@styles/functions";
 
 %flex-centr {
   display: flex;
   align-items: center;
+}
+
+%flex-middle {
+  display: flex;
+  justify-content: center;
 }
 
 %flex-centr-fullwidth {
@@ -24,13 +31,24 @@
   flex-direction: column;
 }
 
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-left-column {
+  @extend %flex-column;
+
+  align-items: flex-start;
+}
+
 
 @mixin lds-roller-child($index) {
-  .lds_roller div:nth-child(#{$index}) {
-    animation-delay: loaderAnimationDelay($index);
+  .ldsRoller div:nth-child(#{$index}) {
+    animation-delay: loader-animation-delay($index);
 
     &::after {
-      top: map-get((
+      top: map.get((
         1 : 63px,
         2 : 68px,
         3 : 71px,
@@ -43,7 +61,9 @@
 
       @if $index < 8 {
         left: (63px - 8px * ($index - 1));
-      } @else {
+      }
+
+ @else {
         left: 12px;
       }
     }

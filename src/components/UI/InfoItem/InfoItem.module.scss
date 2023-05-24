@@ -1,15 +1,21 @@
+@import '@styles/constants';
+
 .infoItem {
+  @extend %flex-column;
+
   & + & {
     margin-top: 30px;
   }
 
   &_title {
     margin: 0;
-    font-size: 20px;
+    font-size: 22px;
   }
 
   &_value {
-    font-size: 16px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 300;
   }
 
 }
