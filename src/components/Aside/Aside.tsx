@@ -1,4 +1,4 @@
-import { Info, InfoWithErrorBoundary } from '@components/Info/Info';
+import { InfoWithErrorBoundary } from '@components/Info/Info';
 import { Clock } from '@components/UI/Clock/Clock';
 import { Search } from '@components/UI/Search/Search';
 import {WrapperContent} from '@typings/app.d'

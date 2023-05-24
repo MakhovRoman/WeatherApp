@@ -1,15 +1,15 @@
 import { InfoItem } from '@components/UI/InfoItem/InfoItem';
+import { withErrorBoundary } from '@src/hoc/withErrorBoundary';
 import { RootState } from '@src/store/store';
 import { UnitConversion } from '@src/utils/unitConversion';
-import { TWeatherData } from '@typings/app';
+import { TWeatherForecastData } from '@typings/app';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 import styles from './Info.module.scss';
-import { withErrorBoundary } from '@src/hoc/withErrorBoundary';
 
 export const Info: React.FC = () => {
-  const weatherData:any = useSelector((state: RootState) => state.weatherData.weatherData)
+  const weatherData:TWeatherForecastData = useSelector((state: RootState) => state.weatherData.weatherData)
   console.log(weatherData)
 
   return (

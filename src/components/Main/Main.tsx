@@ -5,7 +5,8 @@ import clsx from 'clsx';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import styles from './Main.module.scss'
+import { Forecast } from '../Forecast/Forecast';
+import { WeatherDisplay, WeatherDisplaySize } from '../UI/WeatherDisplay/WeatherDisplay';
 
 export const Main: React.FC<WrapperContent> = (props) => {
   const isLoading = useSelector((state: RootState) => state.isLoading.isLoading);
@@ -16,16 +17,15 @@ export const Main: React.FC<WrapperContent> = (props) => {
       <Header />
       {
         !isLoading &&
-        <div className={styles.mainWeatherData}>
-          <div className={styles.mainWeatherData_Picture}>
-            <img src={weatherData.current.condition.icon} alt="weather picture" />
-          </div>
-          <div className={styles.mainWeatherData_Temp}>
-            {Math.round(weatherData.current.temp_c) + ' ℃'}
-            <span>{weatherData.current.condition.text.toUpperCase()}</span>
-          </div>
-        </div>
+        <>
+        <WeatherDisplay
+          size={WeatherDisplaySize.LARGE}
+          data={weatherData}
+        />
+        <Forecast />
+        </>
       }
+
     </section>
   )
 }

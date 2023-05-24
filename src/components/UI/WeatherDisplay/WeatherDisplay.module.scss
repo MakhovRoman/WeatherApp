@@ -1,0 +1,50 @@
+@import '@styles/constants';
+
+$picture-large-size: 300px;
+$picture-small-size: 64px;
+$font-large-size: 48px;
+$font-small-size: 18px;
+
+@mixin img-style($size) {
+  @if  $size == $picture-large-size {
+    margin-top: 50px;
+  }
+
+  & img {
+    width: $size;
+    height: $size;
+  }
+}
+
+@mixin temp-style($size) {
+  font-size: $size;
+  font-weight: 500;
+}
+
+.displayWeather {
+  @extend %flex-centr-column;
+
+  &_picture_large {
+    @include img-style($picture-large-size);
+  }
+
+  &_picture_small {
+    @include img-style($picture-small-size);
+  }
+
+  &_temp {
+    @extend %flex-centr-column;
+
+    &_large {
+      @include temp-style($font-large-size)
+    }
+
+    &_small {
+      @include temp-style($font-small-size)
+    }
+
+    & span {
+      margin-top: 10px;
+    }
+  }
+}

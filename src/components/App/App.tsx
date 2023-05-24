@@ -5,20 +5,12 @@ import { Main } from '@components/Main/Main';
 import { RootState } from '@src/store/store';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
 
 import { Loader } from '../UI/Loader/Loader';
 import styles from './App.module.scss'
 
 export const App:React.FC = () => {
   const isLoading = useSelector((state: RootState) => state.isLoading.isLoading);
-  const city = useSelector((state: RootState) => state.city.city)
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   weatherAPI.getWeather(city)
-  //     .then((response) => dispatch(setWeatherData(response.current)))
-  // }, [city])
 
   return (
     <main className={styles.wrapper}>

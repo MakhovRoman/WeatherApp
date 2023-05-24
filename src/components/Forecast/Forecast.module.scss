@@ -1,0 +1,10 @@
+@import '@styles/constants';
+
+.forecastWrapper {
+  @extend %flex-centr-fullwidth;
+
+  width: 60%;
+  height: fit-content;
+  margin: auto auto 50px;
+
+}
