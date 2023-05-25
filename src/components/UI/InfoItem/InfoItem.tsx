@@ -12,13 +12,15 @@ export type TInfoItem = {
 
 export const InfoItem:React.FC<TInfoItem> = (props) => {
   const isLoading = useSelector((state: RootState) => state.isLoading.isLoading)
+  const isInputError = useSelector((state: RootState) => state.isInputError.isInputError);
 
   return (
     <div className={styles.infoItem}>
       <h4 className={styles.infoItem_title}>
         {props.title}
       </h4>
-      <span className={styles.infoItem_value}>
+      {!isInputError &&
+        <span className={styles.infoItem_value}>
         {
           isLoading
           ?
@@ -27,6 +29,8 @@ export const InfoItem:React.FC<TInfoItem> = (props) => {
           props.value
         }
       </span>
+      }
+
     </div>
   )
 }

@@ -6,4 +6,8 @@ export class UnitConversion {
   static pressure(p: number) {
     return Math.round(p * 0.750062);
   }
+
+  static date(d: string) {
+    return d.split('-').reverse().join('/');
+  }
 }

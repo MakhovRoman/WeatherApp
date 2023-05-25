@@ -14,6 +14,7 @@
       "@utils/*": ["src/utils/*"],
       "@styles/*": ["src/styles/*"],
       "@typings/*": ["typings/*"],
+      "@assets/*": ["src/assets/*"],
     },
 
     /* Bundler mode */

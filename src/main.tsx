@@ -9,6 +9,8 @@ import { createStore } from './store/store';
 
 const store = createStore();
 
+export type AppDispatch = typeof store.dispatch;
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>

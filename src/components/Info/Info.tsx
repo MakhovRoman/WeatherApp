@@ -10,7 +10,6 @@ import styles from './Info.module.scss';
 
 export const Info: React.FC = () => {
   const weatherData:TWeatherForecastData = useSelector((state: RootState) => state.weatherData.weatherData)
-  console.log(weatherData)
 
   return (
     <div className={styles.info}>

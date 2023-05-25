@@ -15,6 +15,7 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, 'src', 'utils'),
       '@styles': path.resolve(__dirname, 'src', 'styles'),
       '@typings': path.resolve(__dirname, 'typings'),
+      '@assets': path.resolve(__dirname, 'src', 'assets'),
     }
   },
   define: {

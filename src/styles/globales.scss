@@ -6,11 +6,12 @@ body {
   font-family: Poppins, sans-serif;
   color: $text-color;
   background-color: $main-bgc;
+  width: 100vw;
 }
 
 #root {
-  width: 100vw;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1300px;
   height: 100vh;
   max-height: 1080px;
   margin: 0 auto;

@@ -1,3 +1,4 @@
+import { UnitConversion } from '@src/utils/unitConversion';
 import { TWeatherData, TWeatherForecastData } from '@typings/app';
 import clsx from 'clsx';
 import React from 'react';
@@ -49,7 +50,7 @@ export const WeatherDisplay: React.FC<TWeatherDataProps> = (props) => {
               :
               <>
                 {Math.round(props.data.day.avgtemp_c) + ' ℃'}
-                <span>{props.data.date}</span>
+                <span>{UnitConversion.date(props.data.date)}</span>
               </>
             }
           </div>

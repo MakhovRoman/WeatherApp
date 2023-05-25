@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const options = {
-  method: 'GET',
   url: __WEATHER_URL__,
   headers: {
 		'X-RapidAPI-Key': __WEATHER_API_KEY__,
@@ -10,12 +9,18 @@ const options = {
 };
 
 export const weatherAPI = {
-  async getWeather(city = 'Stavropol', days = 3) {
+    async getWeather(city = 'Stavropol', days = 3) {
     try {
-      const responce = await axios.request({...options, params: {q: city, days: days}});
-      return responce.data;
+      const response = await axios.request({...options, params: {q: city, days: days}});
+      console.log(response);
+      return response.data;
     } catch(err) {
-      console.log(err);
+      if (axios.isAxiosError(err)) {
+        throw err
+      } else {
+        console.log(err);
+        throw new Error('different error than axios')
+      }
     }
   }
 }
