@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "start": "node server.js",
     "lint:js": "eslint --color --ext \".js,.jsx,.ts,.tsx\" .",
     "lint:scss": "stylelint --cache --cache-location \"node_modules/.cache/stylelint/.stylelintcache\" --ignore-path .gitignore \"{**/*,*}.{css,scss}\" --fix",
     "format:imports": "npm run lint:js -- --fix"
@@ -18,6 +19,7 @@
     "axios": "1.4.0",
     "clsx": "1.2.1",
     "dotenv": "16.0.3",
+    "express": "^4.18.2",
     "normalize.css": "8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -44,6 +46,6 @@
     "stylelint-order": "6.0.3",
     "stylelint-scss": "5.0.0",
     "typescript": "5.0.2",
-    "vite": "4.3.2"
+    "vite": "^4.3.9"
   }
 }
