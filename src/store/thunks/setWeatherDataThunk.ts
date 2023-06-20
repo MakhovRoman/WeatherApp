@@ -16,9 +16,7 @@ export const setWeatherDataThunk = (city: string) => {
       .catch((err) => {
         console.log(err);
 
-        if (!city) {
-          dispatch(setIsInputError(true))
-        }
+        dispatch(setIsInputError(true))
       })
       .then(() => {
         dispatch(setIsLoading(false));
