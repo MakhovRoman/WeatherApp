@@ -24,7 +24,7 @@ export const Main: React.FC<WrapperContent> = (props) => {
         <section className={clsx(props.className)}>
           <Header />
           {
-            (!isLoading && !isInputError)&&
+            !isLoading &&
             <>
               <WeatherDisplay
                 size={WeatherDisplaySize.LARGE}
