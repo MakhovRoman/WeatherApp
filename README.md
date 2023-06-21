@@ -14,6 +14,8 @@
   <br>
   <code>npm run dev</code> - запускает приложение в режиме разработки
   <br>
+  <code>npm run start</code> - запускает приложение на локальном сервере
+  <br>
   <code>npm run lint:scss</code> - запускает линтер для файлов SCSS
   <br>
   <code>npm run format:imports</code> - запускает линтер для файлов JS, JSX, TS, TSX и сортирует порядок импортов
