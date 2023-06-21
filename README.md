@@ -1,5 +1,7 @@
 <h1 align="center">WeatherApp</h1>
 
+![image](https://github.com/MakhovRoman/WeatherApp/assets/70774476/149b489a-b3c5-41e9-9a0b-ce997676a99f)
+
 <p>Учебный проект приложения прогноза погоды. Реализована базовая функциональность:
   <ul>
     <li>Поиск по названию города</li>
