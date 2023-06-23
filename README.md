@@ -35,3 +35,6 @@
   <li>Добавить отображение фазы Луны</li>
   <li>Добавить кнопку обновления прогноза</li>
 </ul>
+<h3>Stack</h3>
+
+![My Skills](https://skillicons.dev/icons?i=html,scss,react,redux,ts,nodejs,docker,vite)
